@@ -9,6 +9,9 @@ jupyter = "*"
 numpy = "*"
 matplotlib = "*"
 scikit-learn = "*"
+fastapi = {extras = ["standard"], version = "*"}
+uvicorn = "*"
+uv = "*"
 
 [dev-packages]
 
