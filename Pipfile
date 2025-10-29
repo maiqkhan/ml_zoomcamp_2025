@@ -12,6 +12,7 @@ scikit-learn = "*"
 fastapi = {extras = ["standard"], version = "*"}
 uvicorn = "*"
 uv = "*"
+xgboost = "*"
 
 [dev-packages]
 
