@@ -3,9 +3,6 @@ import json
 
 lambda_client = boto3.client(
     'lambda',
-    region_name='ca-central-1',
-    aws_access_key_id='',
-    aws_secret_access_key=''
 )
 
 customer = {
@@ -33,7 +30,7 @@ customer = {
 }
 
 response = lambda_client.invoke(
-    FunctionName='churn-prediction',
+    FunctionName='churn-prediction-docker',
     InvocationType='RequestResponse',
     Payload=json.dumps(customer)
 )
