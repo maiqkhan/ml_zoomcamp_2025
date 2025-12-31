@@ -15,6 +15,8 @@ dependencies = [
     "pandas>=2.3.3",
     "boto3>=1.42.18",
     "tf2onnx>=1.8.4",
+    "pillow>=12.0.0",
+    "onnxruntime>=1.23.2",
 ]
 
 [dependency-groups]
