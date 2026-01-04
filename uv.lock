@@ -607,6 +607,19 @@ wheels = [
 ]
 
 [[package]]
+name = "keras-image-helper"
+version = "0.0.2"
+source = { registry = "https://pypi.org/simple" }
+dependencies = [
+    { name = "numpy" },
+    { name = "pillow" },
+]
+sdist = { url = "https://files.pythonhosted.org/packages/03/d5/e7a25cbd3a8be045e812f2ba1a5ebc54aa7fb6ff2509934613ae84995a1a/keras_image_helper-0.0.2.tar.gz", hash = "sha256:940f9f349af758c43985f17b9b01f96838e7a28f17548c603d3a926f2995db18", size = 287692, upload-time = "2025-08-17T19:32:50.765Z" }
+wheels = [
+    { url = "https://files.pythonhosted.org/packages/2b/e3/83e38dc41d8e58d01d01dc24353ebb4673f43a43d2ef0bc133574df7022b/keras_image_helper-0.0.2-py3-none-any.whl", hash = "sha256:cf7d6004af56ff37ea52bfa1e0794b69005e4abd227cd79d144b217feb06b947", size = 5392, upload-time = "2025-08-17T19:32:49.09Z" },
+]
+
+[[package]]
 name = "libclang"
 version = "18.1.1"
 source = { registry = "https://pypi.org/simple" }
@@ -759,6 +772,7 @@ source = { virtual = "." }
 dependencies = [
     { name = "boto3" },
     { name = "fastapi", extra = ["standard"] },
+    { name = "keras-image-helper" },
     { name = "onnxruntime" },
     { name = "pandas" },
     { name = "pillow" },
@@ -782,6 +796,7 @@ dev = [
 requires-dist = [
     { name = "boto3", specifier = ">=1.42.18" },
     { name = "fastapi", extras = ["standard"], specifier = ">=0.120.0" },
+    { name = "keras-image-helper", specifier = ">=0.0.2" },
     { name = "onnxruntime", specifier = ">=1.23.2" },
     { name = "pandas", specifier = ">=2.3.3" },
     { name = "pillow", specifier = ">=12.0.0" },

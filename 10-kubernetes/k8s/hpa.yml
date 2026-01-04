@@ -1,0 +1,18 @@
+apiVersion: autoscaling/v2 # Horizontal Pod Autoscaler API version
+kind: HorizontalPodAutoscaler # HPA kind
+metadata:
+  name: clothing-classifier-hpa    
+spec:
+  scaleTargetRef:
+    apiVersion: apps/v1 # target API version
+    kind: Deployment
+    name: clothing-classifier # target deployment name
+  minReplicas: 2 # minimum number of replicas
+  maxReplicas: 10 # maximum number of replicas
+  metrics:
+  - type: Resource # metric type
+    resource:
+      name: cpu # resource name
+      target:
+        type: Utilization # target type
+        averageUtilization: 50 # target average CPU utilization percentage

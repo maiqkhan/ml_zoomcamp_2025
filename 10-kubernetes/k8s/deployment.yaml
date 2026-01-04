@@ -1,0 +1,41 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata: # name of the deployment
+  name: clothing-classifier
+  labels:
+    app: clothing-classifier
+spec:
+  replicas: 2 # number of pod replicas
+  selector:
+    matchLabels:
+      app: clothing-classifier # label selector for the pods
+  template:
+    metadata:
+      labels:
+        app: clothing-classifier # label for the pod
+    spec:
+      containers:
+      - name: clothing-classifier
+        image: clothing-classifier:v1 # container image
+        imagePullPolicy: Never # do not pull image from registry
+        ports:
+        - containerPort: 8080 # container port
+        resources:
+          requests:
+            memory: "256Mi" # memory request
+            cpu: "250m" # CPU request
+          limits:
+            memory: "512Mi" # memory limit
+            cpu: "500m" # CPU limit
+        livenessProbe:
+          httpGet:
+            path: /health # health check endpoint
+            port: 8080 # container port
+          initialDelaySeconds: 10 # initial delay before probe
+          periodSeconds: 10 # probe period
+        readinessProbe:
+          httpGet:
+            path: /health # health check endpoint
+            port: 8080 # container port
+          initialDelaySeconds: 5 # initial delay before probe
+          periodSeconds: 5 # probe period
